@@ -351,7 +351,8 @@ respectively.
          * @param {CustomEvent} event An `iron-select` event.
          */
         _onIronSelect: function(event) {
-          this._setSelectedItem(event.detail.item.parentElement.selectedItems);
+          const parent = event.detail.item.parentElement
+          if(parent) this._setSelectedItem(parent.selectedItems);
         },
 
         /**
@@ -360,7 +361,8 @@ respectively.
          * @param {CustomEvent} event An `iron-deselect` event.
          */
         _onIronDeselect: function(event) {
-          this._setSelectedItem(event.detail.item.parentElement.selectedItems);
+          const parent = event.detail.item.parentElement
+          if(parent) this._setSelectedItem(parent.selectedItems);
         },
 
         /**
